@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-hind-siliguri: "Hind Siliguri", sans-serif;
+  --font-inter: "Inter", sans-serif;
+
+  /* বাংলাদেশ পতাকা-অনুপ্রাণিত রঙের টোকেন */
+  --color-green-50: #E6F2EE;
+  --color-green-100: #C2E0D5;
+  --color-green-500: #00875A;
+  --color-green-600: #006A4E;
+  --color-green-700: #004D38;
+  --color-green-900: #002A1F;
+
+  --color-red-50: #FEE9EC;
+  --color-red-100: #FCD1D7;
+  --color-red-500: #F42A41;
+  --color-red-600: #C41E32;
+  --color-red-700: #9B1626;
+
+  --color-gold-400: #EAB308;
+  --color-gold-600: #CA8A04;
+
+  /* সিম্যান্টিক ও বিদ্যমান ভ্যারিয়েবল */
+  --color-primary: #006A4E;
+  --color-primary-dark: #004D38;
+  --color-accent: #EAB308;
+  --color-earth: #92400E;
+  --color-bg: #FAF7F2;
+  --color-surface: #FFFFFF;
+  --color-text: #1A1A1A;
+  --color-text-muted: #57534E;
+  --color-border: #E5E0D8;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-hind-siliguri), var(--font-inter), sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-hind-siliguri), sans-serif;
+    font-weight: 700;
+    line-height: 1.28;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background-color: #C2E0D5;
+    color: #004D38;
+  }
+
+  /* সহজলভ্য কিবোর্ড ও টাচ ফোকাস রিং (ring-2 ring-green-600 ring-offset-2) */
+  :focus-visible {
+    outline: 2px solid #006A4E;
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  /* হিরো ওভারলে গ্র্যাডিয়েন্ট — বাংলাদেশ ফ্ল্যাগ-অনুপ্রাণিত গাঢ় সবুজ (৮৫% অপাসিটি) */
+  .hero-overlay-gradient {
+    background: linear-gradient(135deg, #002A1F 0%, #006A4E 60%, #004D38 100%);
+    opacity: 0.85;
+  }
+
+  /* বাংলা টাইপোগ্রাফি ইউটিলিটি */
+  .font-bangla {
+    font-family: var(--font-hind-siliguri), sans-serif;
+    line-height: 1.65;
+  }
+
+  .font-bangla-heading {
+    font-family: var(--font-hind-siliguri), sans-serif;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  /* বাংলা সংখ্যার জন্য সামঞ্জস্যপূর্ণ ট্যাবুলার স্পেসিং */
+  .bn-num {
+    font-family: var(--font-hind-siliguri), sans-serif;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.01em;
+  }
+
+  /* ফোন নম্বর ও ইমেইলের মতো ইংরেজি টেক্সটের জন্য */
+  .font-english {
+    font-family: var(--font-inter), sans-serif;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* হরিজন্টাল স্ক্রলবারের ক্লিন স্টাইল */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
